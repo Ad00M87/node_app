@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <ul>
+      <a href="/">Home</a>
+      <a href="/todos">Todos</a>
+    </ul>
+    <h1>TODOS</h1>
+    <hr />
+    <ol>
+      <% todos.forEach( function(todo) { %>
+        <li><%= todo %></li>
+      <% }) %>
+    </ol>
+    <hr />
+    <form method="post" action="/todos">
+      <input required name="todo" />
+      <button>Add Todo</button>
+    </form>
+  </body>
+</html>

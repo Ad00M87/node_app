@@ -1,5 +1,6 @@
 var http = require('http')
 var home = require('./routes/home');
+var todos = require('./routes/todos');
 
 var server = http.createServer();
 var port = '8080';
@@ -9,8 +10,10 @@ function router(method, url, res) {
   switch(url) {
     case '/':
       return home(method, res);
+    case '/todos':
+      return todos(method, res);
     default:
-      fs.readFile(path.join(__dirname, 'views', '404.html') function(err, content) {
+      fs.readFile(path.join(__dirname, 'views', '404.html'), function(err, content) {
         res.end(content);
       });
   }

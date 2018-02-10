@@ -3,7 +3,7 @@ var path = require('path');
 
 function home(method, res) {
   switch(method) {
-    case 'GET';
+    case 'GET':
       fs.readFile(path.join(__dirname, '..', 'views', 'index.html'), function( err, content) {
         res.end(content);
       })
