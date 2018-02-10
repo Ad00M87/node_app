@@ -7,8 +7,12 @@ var address = 'http://localhost' + port;
 
 function router(method, url, res) {
   switch(url) {
-    case '/';
+    case '/':
       return home(method, res);
+    default:
+      fs.readFile(path.join(__dirname, 'views', '404.html') function(err, content) {
+        res.end(content);
+      });
   }
 }
 
